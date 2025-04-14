@@ -24,8 +24,6 @@ public struct Money {
         self.currency = currency
     }
         
-    // takes a currency name as a parameter
-    // returns a new Money that contains the converted amount
     func convert(_ targetCurr: String) -> Money {
         if (!isValidCurrency(targetCurr: targetCurr)) { return self }
         
@@ -103,7 +101,8 @@ public class Job {
                 type = JobType.Salary(UInt(newAnnualWage))
         }
     }
-        
+    
+    // extra credit
     func convert() {
         switch type {
             case .Hourly(let hourlyWage):
@@ -142,17 +141,17 @@ public class Person {
         self.lastName = lastName
         self.age = age
     }
-        
+    
     init(firstName: String, age: Int) {
         self.firstName = firstName
         self.age = age
     }
-        
+    
     init(lastName: String, age: Int) {
         self.lastName = lastName
         self.age = age
     }
-        
+    
     func toString() -> String {
         // [Person: firstName: Ted lastName: Neward age: 45 job: Salary(1000) spouse: Charlotte]
             
